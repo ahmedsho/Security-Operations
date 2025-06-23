@@ -1,0 +1,20 @@
+# How to Install Volatility in Kali Linux
+Link: https://volatilityfoundation.org
+
+# Getting the Kali Linux ready:
+sudo apt update  # For package manager update
+sudo apt install open-vm-tools open-vm-tools-desktop -y # To install necessary VMware tools
+git clone https://github.com/volatilityfoundation/volatility3.git # To clone the git repository
+
+# Create a virtual environment for the Installation:
+sudo apt install python3.13-venv 
+python3 -m venv environment_volatility 
+source ./environment_volatility/bin/activate
+
+# Install pycryptodome as part of the requirements:
+pip3 install pycryptodome
+
+# Enabling SFTP:
+sudo systemctl start ssh
+sudo systemctl status ssh
+(I obtained Snapshot of VM images & I used WinSCP to transfer the snapshot to Kali Linux)
